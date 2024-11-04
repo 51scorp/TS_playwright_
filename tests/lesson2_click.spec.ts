@@ -6,7 +6,7 @@ test('click test', async ({page}) => {
   if (!button) {
     throw new Error('Кнопка не найдена!');
   }
-  await page.click('#badButton')
+  await button.click()
   await page.waitForTimeout(1000);
   const backgroundColor = await button.evaluate((node) => getComputedStyle(node).getPropertyValue('background-color'));
   expect(backgroundColor).toBe('rgb(33, 136, 56)');
